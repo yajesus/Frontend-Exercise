@@ -1,0 +1,19 @@
+.addressauto_contain {
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    overflow-y: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.autoinput {
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid #FEE715FF;
+    padding-left: 10px;
+}

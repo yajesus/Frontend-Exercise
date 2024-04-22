@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/allinone.css";
-
+import AddressAutocomplete from "./AddressAutocomplete";
 interface SignupData {
   firstName: string;
   lastName: string;
@@ -49,6 +49,12 @@ const Signup: React.FC = () => {
   const [passwordmatch, setPasswordmacth] = useState<boolean>(false);
   const [wrongemail, setWrongemail] = useState<boolean>(false);
 
+  const handleAddressSelect = (address: string) => {
+    setFormData({
+      ...formData,
+      address: address,
+    });
+  };
   const handleChangefirst = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -291,11 +297,10 @@ const Signup: React.FC = () => {
             )}
             {passwordmatch && <p className="error">password must be matched</p>}
             <div className="address_contain">
-              <label>Address:</label>
-              <input
-                type="text"
-                className="address_input"
-                onChange={handleChangeaddress}
+              <label>address:</label>
+              <AddressAutocomplete
+                onSelect={handleAddressSelect}
+                placeholder="Enter your address"
               />
             </div>
             {showaddresserror && <p className="error">please fill address</p>}
