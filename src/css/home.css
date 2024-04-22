@@ -1,0 +1,251 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    /* Prevent overflow */
+}
+
+.home_contain {
+    width: 100%;
+    height: 100vh;
+    background-color: #101820FF;
+    position: absolute;
+
+
+}
+
+.card_contain {
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(16, 24, 32, 0.1), 0 1px 3px rgba(16, 24, 32, 0.08);
+}
+
+.homemiddle_contain {
+    width: 95vw;
+    height: 100%;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 20px;
+    z-index: 3;
+    overflow: auto;
+    margin-left: 2%;
+    scrollbar-width: thin;
+
+    scrollbar-color: #ffffff #101820FF;
+
+}
+
+
+
+.homemiddle_contain::-webkit-scrollbar {
+    width: 8px;
+    /* Width of the scrollbar */
+}
+
+.homemiddle_contain::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners for the scrollbar thumb */
+}
+
+.homemiddle_contain::-webkit-scrollbar-track {
+    background-color: #101820FF;
+    /* Color of the scrollbar track */
+}
+
+.header {
+    color: #FEE715FF;
+}
+
+.header_contain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header_contain .header {
+    justify-content: center;
+    position: absolute;
+}
+
+.users_para {
+    color: #FEE715FF;
+}
+
+.image {
+    width: 100%;
+    height: 30%;
+    object-fit: contain;
+}
+
+.pagination {
+    width: 100%;
+    height: 60px;
+    background-color: #101820FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_uppercontain {
+    width: 100%;
+    display: flex;
+
+    bottom: 0;
+    justify-content: right;
+}
+
+.img_contain {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid black;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+p {
+    font-family: sans-serif;
+    font-size: medium;
+    font-weight: 200;
+}
+
+.user_name {
+    font-weight: 700;
+}
+
+.email_para {
+    font-weight: 500;
+}
+
+.error_home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.errorhome_contain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.card_contain {
+    animation: glow 1s infinite alternate;
+}
+
+.profile_contain {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: right;
+}
+
+.profile {
+    width: 50px;
+    height: 50px;
+    background-color: #101820FF;
+    border: 2px solid #FEE715FF;
+    border-radius: 50%;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.man_profile {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.profile_show {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    margin-top: 30px;
+    border: 1px solid #FEE715FF;
+    background-color: #101820FF;
+    position: relative;
+    z-index: 10;
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_edit {
+    width: 50%;
+    height: 30%;
+    border-radius: 20px;
+    border: 1px solid #FEE715FF;
+    cursor: pointer;
+    background-color: transparent;
+    color: #FEE715FF;
+}
+
+.profile_show h1 {
+    color: #FEE715FF;
+    font-weight: 500;
+}
+
+.profile_show p {
+    color: #FEE715FF;
+}
+
+.loding {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+}
+
+.load {
+
+    color: #FEE715FF;
+    font-size: larger;
+    font-weight: 600;
+    animation: loading 1s infinite linear ease-in-out;
+}
+
+.no_users {
+    margin-left: 20%;
+    color: #FEE715FF;
+}
+
+@keyframes loading {
+    100% {
+        transform: scale(0px);
+    }
+
+    50% {
+        transform: scale(100px);
+    }
+}

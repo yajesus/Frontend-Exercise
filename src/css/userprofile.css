@@ -1,0 +1,77 @@
+.userpro_contain {
+    width: 100%;
+    height: 100%;
+    background-color: #101820FF;
+    position: absolute;
+}
+
+.userheader_contain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form_containn {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.from_middle {
+    width: 50%;
+    height: 60%;
+    border: 1px solid #FEE715FF;
+    position: absolute;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.firstinput {
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid #FEE715FF;
+    padding-left: 10px;
+}
+
+.form {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.probtn {
+    margin-top: 30%;
+    margin-left: 30%;
+    position: absolute;
+}
+
+.headrpro {
+    color: #FEE715FF;
+    font-weight: 600;
+
+}
+
+@media (max-width:800px) {
+    .probtn {
+        margin-top: 70%;
+
+    }
+}
+
+@media (max-width:550px) {
+    .probtn {
+        margin-top: 90%;
+        margin-left: 10%;
+    }
+}
+
+@media (max-width:490px) {
+    .probtn {
+        margin-top: 130%;
+        margin-left: 5%;
+        width: 90%;
+    }
+}
