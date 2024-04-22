@@ -62,7 +62,8 @@ const Login: React.FC = () => {
 
         console.log("login success", token);
       } catch (error: any) {
-        const errorMessage = error.response?.data?.message;
+        const errorMessage =
+          error.response?.data?.message || "some thing went wrong";
         console.error("Login error:", error);
         setError(errorMessage);
         setTimeout(() => {
