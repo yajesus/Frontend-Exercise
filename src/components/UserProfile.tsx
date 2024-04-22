@@ -20,7 +20,8 @@ const UserProfile: React.FC = () => {
     email: "",
   };
   console.log(userData);
-  // Set the initial state of editedUser to userData
+  console.log(userData.id);
+  //  initial state of editedUser to userData
   const [editedUser, setEditedUser] = useState<User>({ ...userData });
   const [checkusername, setCheckusername] = useState<string>("");
   const [checkuserlast, setCheckuserlast] = useState<string>("");
@@ -52,7 +53,7 @@ const UserProfile: React.FC = () => {
       alert("please enter valid email");
     } else
       try {
-        // Send a PUT request to update the user profile
+        // a PUT request to update the user profile
         await axios.put(`/profile?id=${editedUser.id}`, editedUser);
         alert("User information updated successfully!");
       } catch (error) {
@@ -65,6 +66,11 @@ const UserProfile: React.FC = () => {
     <div className="userpro_contain">
       <div className="userheader_contain">
         <h2 className="headrpro">User Profile</h2>
+      </div>
+      <div className="usedata_contain">
+        <h1>First Name: {userData.firstName}</h1>
+        <p>Last Name: {userData.lastName}</p>
+        <p>Email: {userData.email}</p>
       </div>
       <div className="form_containn">
         <div className="from_middle">

@@ -23,7 +23,6 @@ const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
     const value = e.target.value;
     setInputValue(value);
 
-    // Fetch autocomplete suggestions from Nominatim
     try {
       const response = await axios.get(
         `https://nominatim.openstreetmap.org/search?q=${value}&format=json`
@@ -62,9 +61,9 @@ const AddressAutocomplete: React.FC<AddressAutocompleteProps> = ({
         value={inputValue}
         onChange={handleInputChange}
         onKeyDown={handleKeyDown}
-        placeholder={placeholder}
         style={{ width: "70%", boxSizing: "border-box" }}
         className="autoinput"
+        placeholder="enter address"
       />
 
       <ul style={{ width, height }}>

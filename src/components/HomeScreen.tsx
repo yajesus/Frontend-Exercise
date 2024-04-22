@@ -4,6 +4,8 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 const man = require("../asset/man.png");
 const img = require("../asset/img.png");
+const boy = require("../asset/boy.jpg");
+const girl = require("../asset/girl.jpg");
 
 interface User {
   _id: number;
@@ -33,6 +35,11 @@ const Home: React.FC = () => {
   };
 
   console.log("hello", userData);
+  const getRandomImage = (): string => {
+    const images = [boy, girl]; // Array of boy and girl images
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+  };
   function handleclick() {
     const profile: any = document.querySelector(".profile_show");
     if (profile.style.display == "none") {
@@ -115,7 +122,7 @@ const Home: React.FC = () => {
           users.map((user: User) => (
             <div key={user._id} className="card_contain">
               <img
-                src="https://via.placeholder.com/100"
+                src={getRandomImage()}
                 alt="Profile"
                 width="100"
                 className="image"
