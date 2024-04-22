@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/allinone.css";
-
+import AddressAutocomplete from "./AddressAutocomplete";
 interface SignupData {
   firstName: string;
   lastName: string;
@@ -41,14 +41,26 @@ const Signup: React.FC = () => {
   const [showfirstnameerror, setShowfirstnameerror] = useState<boolean>(false);
   const [showlastnameerror, setShowlastnameerror] = useState<boolean>(false);
   const [showemailerror, setShowemailerror] = useState<boolean>(false);
-  const [showaddresserror, setShowaddresserror] = useState<boolean>(false);
+
   const [showusernameerror, setShowusernameerror] = useState<boolean>(false);
   const [showpassworderror, setShowpassworderror] = useState<boolean>(false);
   const [showconfirmpassworderror, setShowconfirmpassworderror] =
     useState<boolean>(false);
   const [passwordmatch, setPasswordmacth] = useState<boolean>(false);
   const [wrongemail, setWrongemail] = useState<boolean>(false);
-
+  const handleBuyerSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value;
+    setFormData({
+      ...formData,
+      isBuyer: value === "true", // Convert string value to boolean
+    });
+  };
+  const handleAddressSelect = (address: string) => {
+    setFormData({
+      ...formData,
+      address: address,
+    });
+  };
   const handleChangefirst = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -154,11 +166,6 @@ const Signup: React.FC = () => {
       setWrongemail(!wrongemail);
       setTimeout(() => {
         setWrongemail(false);
-      }, 1000);
-    } else if (addresserror == "") {
-      setShowaddresserror(!showaddresserror);
-      setTimeout(() => {
-        setShowaddresserror(false);
       }, 1000);
     } else
       try {
@@ -291,17 +298,20 @@ const Signup: React.FC = () => {
             )}
             {passwordmatch && <p className="error">password must be matched</p>}
             <div className="address_contain">
-              <label>Address:</label>
-              <input
-                type="text"
-                className="address_input"
-                onChange={handleChangeaddress}
+              <label>address:</label>
+              <AddressAutocomplete
+                onSelect={handleAddressSelect}
+                placeholder="Enter your address"
               />
             </div>
-            {showaddresserror && <p className="error">please fill address</p>}
+
             <div className="buyer_contain">
               <label>Buyer:</label>
-              <select name="isBuyer" className="buyer_selector">
+              <select
+                name="isBuyer"
+                className="buyer_selector"
+                onChange={handleBuyerSelect}
+              >
                 <option value="true">Yes</option>
                 <option value="false">No</option>
               </select>

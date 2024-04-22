@@ -54,6 +54,30 @@
 
 }
 
+.usedata_contain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usedata_contain h1 {
+    color: #FEE715FF;
+    font-size: larger;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.usedata_contain p {
+    color: #FEE715FF;
+    font-weight: 200;
+    padding: 0;
+    margin: 0;
+}
+
 @media (max-width:800px) {
     .probtn {
         margin-top: 70%;

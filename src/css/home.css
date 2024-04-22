@@ -78,8 +78,10 @@ body {
 
 .image {
     width: 100%;
-    height: 30%;
-    object-fit: contain;
+    height: 40%;
+    object-fit: fill;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .pagination {
@@ -105,6 +107,7 @@ body {
     border-radius: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid black;
+    margin-top: -10%;
 }
 
 .img {
@@ -232,7 +235,7 @@ p {
     color: #FEE715FF;
     font-size: larger;
     font-weight: 600;
-    animation: loading 1s infinite linear ease-in-out;
+
 }
 
 .no_users {
@@ -240,12 +243,20 @@ p {
     color: #FEE715FF;
 }
 
-@keyframes loading {
-    100% {
-        transform: scale(0px);
+@media (max-width:1000px) {
+    .homemiddle_contain {
+        margin-left: 10%;
     }
+}
 
-    50% {
-        transform: scale(100px);
+@media (max-width:700px) {
+    .homemiddle_contain {
+        margin-left: 5%;
+    }
+}
+
+@media (max-width:655px) {
+    .homemiddle_contain {
+        margin-left: 15%;
     }
 }

@@ -46,7 +46,7 @@
 .username_contain,
 .password_contain,
 .confirmpassword_contain,
-.address_contain,
+
 .buyer_contain {
     width: 100%;
     height: 40px;
@@ -55,6 +55,15 @@
     display: flex;
 
     justify-content: center;
+}
+
+.address_contain {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .firstname_input,
