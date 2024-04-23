@@ -19,6 +19,7 @@ interface User {
 }
 
 const Home: React.FC = () => {
+  //state to collect user info
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -51,6 +52,7 @@ const Home: React.FC = () => {
   }
   const fetchUsers = async (page: number) => {
     setLoading(true);
+    //api call
     try {
       const response = await axios.get(
         `http://143.198.168.244:3000/api/users/fetch/dummy/user-v2?page=${page}`

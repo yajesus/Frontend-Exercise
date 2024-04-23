@@ -26,3 +26,7 @@ front end exercise
       |-- package.json
       |-- README.md
       |-- tsconfig.json
+
+##reminder
+
+    * try to see the web app localy by installing node_modules because it is deployed on https but the url we are using is http so it doesnt work as expected thankyou

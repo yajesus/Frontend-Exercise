@@ -27,6 +27,7 @@ const Signup: React.FC = () => {
     isBuyer: false,
     profilePic: "", // optional
   });
+  //state to collect user info
   const [error, setError] = useState<boolean>(false);
   const [showerror, setShowerror] = useState<string>("");
   const [success, setSuccess] = useState<boolean>(false);
@@ -167,7 +168,9 @@ const Signup: React.FC = () => {
       setTimeout(() => {
         setWrongemail(false);
       }, 1000);
-    } else
+    }
+    //api call
+    else
       try {
         const response = await axios.post(
           "http://143.198.168.244:3000/api/users/register/v2",
