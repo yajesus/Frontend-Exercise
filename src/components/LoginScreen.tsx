@@ -7,6 +7,7 @@ interface LoginResponse {
 }
 
 const Login: React.FC = () => {
+  //state to collect user info
   const [error, setError] = useState<string>("");
   const [logemailerror, setLogemailerror] = useState<string>("");
   const [logpassworderror, setLogpassworderror] = useState<string>("");
@@ -27,6 +28,7 @@ const Login: React.FC = () => {
     setLogpassworderror(e.target.value);
   };
   const handleLogin = async () => {
+    //check inputs
     if (logemailerror == "") {
       setShowlogemailerror(!showlogemailerror);
       setTimeout(() => {
@@ -44,6 +46,7 @@ const Login: React.FC = () => {
       }, 1000);
     } else
       try {
+        //api call
         const response = await axios.post<LoginResponse>(
           "http://143.198.168.244:3000/api/users/login",
           {
